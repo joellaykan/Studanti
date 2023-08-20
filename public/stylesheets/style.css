@@ -261,9 +261,13 @@ h1{
 }
 
 .footer{
-  position: absolute;
-  bottom: 0;
+  bottom: 0!important;
   display: flex;
+  justify-content: space-around;
+}
+
+.footer_cards{
+  display: contents;
 }
 
 .footer-card{
