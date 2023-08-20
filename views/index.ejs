@@ -1,0 +1,140 @@
+<% if(session.user_id) { %> <!--MAIN PAGE-->
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">-->
+
+        <!--<link href="http://studanti.rf.gd/stylesheets/general.css">-->
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+
+        <title>Início - Studanti</title>
+    </head>
+    <body>
+        <div class="navbar">
+          <h1 class="logo"><a href="/"><b>Studanti</b></a></h1>
+          <a href="/logout" class="primary-btn">Sair</a>
+        </div>
+
+        <div class="container">
+            <div class="welcome">
+                <h2 class="welcome-message">Olá, <%= (session.user_name) ? session.user_name : '' %></h2>
+            </div>
+
+            <div class="cards">
+                <a class="index-card" href="#">
+                    <h3>Avisos</h3>
+                    <p>Veja os novos avisos de sua escola.</p>
+                </a>
+                <a class="index-card" href="#">
+                    <h3>Avisos</h3>
+                    <p>Veja os novos avisos de sua escola.</p>
+                </a>
+                <a class="index-card" href="#">
+                    <h3>Avisos</h3>
+                    <p>Veja os novos avisos de sua escola.</p>
+                </a>
+                <a class="index-card" href="#">
+                    <h3>Avisos</h3>
+                    <p>Veja os novos avisos de sua escola.</p>
+                </a>
+                <a class="index-card" href="#">
+                    <h3>Avisos</h3>
+                    <p>Veja os novos avisos de sua escola.</p>
+                </a>
+                <a class="index-card" href="#">
+                    <h3>Avisos</h3>
+                    <p>Veja os novos avisos de sua escola.</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <a class="footer-card" href="#">
+                <img src="/images/icons/home-fill.svg" alt="">
+                <p>Início</p>
+            </a>
+            <a class="footer-card" href="#">
+                <img src="/images/icons/clock.svg" alt="">
+                <p>Horários</p>
+            </a>
+            <a class="footer-card" href="#">
+                <img src="/images/icons/person-fill.svg" alt="">
+                <p>Eu</p>
+            </a>
+            <a class="footer-card" href="#">
+                <img src="/images/icons/settings-gear.svg" alt="">
+                <p>Configurações</p>
+            </a>
+            <a class="footer-card" href="#">
+                <img src="/images/icons/config-icon.png" alt="">
+                <p>Horários</p>
+            </a>
+        </div>
+    </body>
+</html>
+
+<% } else { %> <!--LOGIN PAGE-->
+
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Entrar - Studanti</title>
+        <link href="https://fonts.googleapis.com/css2?family=Muli:wght@400;700&display=swap" rel="stylesheet">
+        <!--<link href="http://studanti.rf.gd/stylesheets/general.css">-->
+        <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+        <!--<link href="/stylesheets/login.css" rel="stylesheet" type="text/css">-->
+        <style>
+            .source{
+                text-align: center;
+                color: #ffffff;
+                padding: 10px;
+            }
+            body {
+                margin: 0;
+                padding: 0;
+                background-color: #d9a348;
+            }
+        </style>
+    </head>
+    <body>
+    
+        <div class="main-container">
+            <div class="form-container">
+
+                <div class="form-body">
+                    <h2 class="title">Entrar na Studanti</h2>
+
+                    <form action="/login" method="post" class="the-form">
+    
+                        <label for="email">Email</label>
+                        <input type="email" name="user_email_address" id="email" placeholder="Digite seu email">
+    
+                        <label for="password">Senha</label>
+                        <input type="password" name="user_password" id="password" placeholder="Digite sua senha">
+    
+                        <input type="submit" value="Entrar">
+
+                      </div>
+    
+                    </form>
+    
+                </div><!-- FORM BODY-->
+    
+                <!--<div class="form-footer">
+                    <div>
+                        <span>Don't have an account?</span> <a href="">Sign Up</a>
+                    </div>
+                </div>--><!-- FORM FOOTER -->
+    
+            </div><!-- FORM CONTAINER -->
+        </div>
+    
+    </body>
+    </html>
+
+<% } %>
